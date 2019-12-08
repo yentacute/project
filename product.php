@@ -49,11 +49,12 @@ $galery = $stmt->fetchAll(PDO::FETCH_ASSOC);
 				<!-- Product main img -->
 				<div class="col-md-5 col-md-push-2">
 					<div id="product-main-img">
-						<?php fe ?>
-						<div class="product-preview">
-							<img src="./img/product01.png" alt="">
+						<?php foreach ($galery as $item):?>
+							<div class="product-preview">
+							<img src="galery/<?=$item['url']?>" alt="">
 						</div>
-
+						<?php endforeach; ?>
+						
 
 					</div>
 				</div>
