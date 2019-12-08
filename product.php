@@ -21,8 +21,8 @@
 	// 	");
 	// $stmt->execute();
 	}
-	if (isset($_GET['cate_id'])) {
-		$cate_id = $_GET['cate_id'];
+	if (isset($_GET['id_cate'])) {
+		$id_cate = $_GET['id_cate'];
 		$sql = "SELECT *  FROM product WHERE  id_cate = '$id_cate'";
 		$stmt = $conn->prepare($sql);
 		$stmt ->execute();
@@ -477,13 +477,13 @@
 								</div> -->
 							</div>
 							<div class="product-body">
-								<p class="product-category"><?php echo $product['name'] ?></p>
+								<p class="product-category"><?php echo $product['name_cate'] ?></p>
 								<h3 class="product-name"><a href="#"><?php echo $product['nameproduct'] ?></a></h3>
 								<h4 class="product-price"><?php echo $product['sale_price'] ?>$<del class="product-old-price"><?php echo $product['price'] ?>$</del></h4>
 								<div class="product-rating">
 								</div>
 								<div class="product-btns">
-										<a href="product.php"><button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button></a>
+										<a href="product.php?id=<?=$product['id']?>"><button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button></a>
 								</div>
 							</div>
 							<div class="add-to-cart">
